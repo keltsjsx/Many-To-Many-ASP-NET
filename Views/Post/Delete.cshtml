@@ -1,0 +1,19 @@
+@model MovieHolic.ViewModels.PostViewModels.PostViewModel;
+
+@{
+    ViewData["Title"] = "Delete Post";
+}
+
+<h1>Delete</h1>
+<div>
+    <h4>Delete Post</h4>
+    <hr>
+    @Html.DisplayNameFor(model => model.Id) : @Html.DisplayFor(model => model.Id) <br>
+    @Html.DisplayNameFor(model => model.Title) : @Html.DisplayFor(model => model.Title) <br> 
+    @Html.DisplayNameFor(model => model.Description) : @Html.DisplayFor(model => model.Description) <br>
+
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-danger">
+    </form>
+
+</div>

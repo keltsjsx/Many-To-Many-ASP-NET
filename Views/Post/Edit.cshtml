@@ -1,0 +1,37 @@
+@model MovieHolic.ViewModels.PostViewModels.EditPostViewModel;
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label"></label>
+                <input asp-for="Title" class="form-control"/>
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label"></label>
+                <input asp-for="Description" class="form-control"/>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SelectedTags" class="form-label"></label>
+                <select asp-for="SelectedTags" asp-items="Model.Tags" class="form-control" multiple>
+                    <option></option>
+                </select>
+                <span class="text-danger" asp-validation-for="SelectedTags"></span>
+            </div>
+            <input type="submit" value="Update" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}

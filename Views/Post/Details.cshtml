@@ -1,0 +1,36 @@
+@model MovieHolic.Models.Post
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Title)</th>
+                    <td>:</td>
+                    <td>@Html.DisplayFor(model => model.Title)</td>
+                </tr>
+                <tr>
+                    <th>Tags</th>
+                    <td>:</td>
+                    <td>
+                        <ul>
+                            @foreach(var item in Model.PostTags)
+                            {
+                                <li>@Html.DisplayFor(model => item.Tag.Title)</li>
+                            }
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Description)</th>
+                    <td>:</td>
+                    <td>@Html.DisplayFor(model => model.Description)</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
